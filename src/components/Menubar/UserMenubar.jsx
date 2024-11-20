@@ -9,7 +9,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-export const CustomMenubar = ({ menus }) => {
+export default function UserMenubar({ menus }) {
   return (
     <Menubar>
       {menus.map((menu, menuIndex) => (
@@ -33,4 +33,4 @@ export const CustomMenubar = ({ menus }) => {
       ))}
     </Menubar>
   );
-};
+}
