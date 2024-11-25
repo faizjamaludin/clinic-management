@@ -45,6 +45,7 @@ export default {
           active: "#4f46e5",
           inactive: "#e5e7eb",
           caption: "#9ca3af",
+          icon: "#666666",
         },
         bg: {
           primary: "#FFFFFF",

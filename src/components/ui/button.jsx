@@ -15,9 +15,9 @@ const buttonVariants = cva(
         // secondary:
         //   "bg-zinc-100 text-zinc-900 hover:bg-zinc-100/80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80",
         default:
-          "bg-button-secondary text-button-text-secondary hover:bg-button-primary hover:text-button-text-primary duration-200 ease-in-out font-medium text-sm rounded-xs gap-sm",
+          "bg-button-primary text-button-text-primary hover:bg-button-primary hover:text-button-text-primary duration-200 ease-in-out font-medium text-xs rounded-xs gap-sm",
         secondary:
-          "hover:bg-slate-100 duration-200 ease-in-out font-medium text-sm rounded-xs gap-sm",
+          "hover:bg-slate-100 duration-200 ease-in-out font-medium text-xs rounded-xs gap-sm border border-border-primary",
         destructive:
           "bg-red-500 text-zinc-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-zinc-50 dark:hover:bg-red-900/90",
         outline:
@@ -25,10 +25,10 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50",
         link: "text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-50",
-        icon: "rounded-md px-2 py-1 cursor-pointer hover:bg-zinc-100",
+        icon: "rounded-sm cursor-pointer hover:bg-zinc-100",
       },
       size: {
-        default: "px-md py-xs",
+        default: "h-9 px-md py-xs",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-9 w-10",

@@ -9,28 +9,26 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-export default function UserMenubar({ menus }) {
+export const UserMenubar = ({ menus, trigger }) => {
   return (
     <Menubar>
-      {menus.map((menu, menuIndex) => (
-        <MenubarMenu key={menuIndex}>
-          <MenubarTrigger>{menu.trigger}</MenubarTrigger>
-          <MenubarContent>
-            {menu.items.map((item, itemIndex) =>
-              item.type === "separator" ? (
-                <MenubarSeparator key={itemIndex} />
-              ) : (
-                <MenubarItem key={itemIndex} onClick={item.action}>
-                  {item.label}{" "}
-                  {item.shortcut && (
-                    <MenubarShortcut>{item.shortcut}</MenubarShortcut>
-                  )}
-                </MenubarItem>
-              )
-            )}
-          </MenubarContent>
-        </MenubarMenu>
-      ))}
+      <MenubarMenu>
+        <MenubarTrigger>{trigger}</MenubarTrigger>
+        <MenubarContent>
+          {menus.map((item, index) =>
+            item.type === "separator" ? (
+              <MenubarSeparator key={index} />
+            ) : (
+              <MenubarItem key={index} onClick={item.action}>
+                {item.label}{" "}
+                {item.shortcut && (
+                  <MenubarShortcut>{item.shortcut}</MenubarShortcut>
+                )}
+              </MenubarItem>
+            )
+          )}
+        </MenubarContent>
+      </MenubarMenu>
     </Menubar>
   );
-}
+};

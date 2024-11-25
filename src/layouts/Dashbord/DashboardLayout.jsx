@@ -7,7 +7,7 @@ const DashboardLayout = ({ children, className }) => {
       <Sidebar />
       <div className="flex flex-col">
         <Topbar />
-        {children}
+        <div className="p-xl flex flex-col">{children}</div>
       </div>
     </div>
   );
