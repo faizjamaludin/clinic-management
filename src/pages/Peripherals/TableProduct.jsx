@@ -1,4 +1,4 @@
-import { InputText } from "@/components";
+import { InputText, TableData } from "@/components";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
@@ -6,6 +6,9 @@ import {
   MdFilterList,
   MdOutlineAdd,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { peripheralsColumn } from "@/components/Table/columns/peripheralsColumns";
+import { peripheralsData } from "@/components/Table/data/peripheralsData";
 
 export default function TableProduct() {
   return (
@@ -23,13 +26,16 @@ export default function TableProduct() {
             <MdFilterList />
             Filters
           </Button>
-          <Button>
-            <MdOutlineAdd />
-            Add Peripherals
+          <Button asChild>
+            <Link to="add-new-peripherals">
+              <MdOutlineAdd />
+              Add Peripherals
+            </Link>
           </Button>
         </div>
       </div>
       {/* table product */}
+      <TableData columns={peripheralsColumn} data={peripheralsData} />
     </div>
   );
 }
