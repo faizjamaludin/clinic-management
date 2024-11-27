@@ -1,6 +1,6 @@
 import { InputText, TableData } from "@/components";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdOutlineShoppingBag,
   MdFilterList,
@@ -11,14 +11,22 @@ import { peripheralsColumn } from "@/components/Table/columns/peripheralsColumns
 import { peripheralsData } from "@/components/Table/data/peripheralsData";
 
 export default function TableProduct() {
+  const [totalProduct, setTotalProduct] = useState();
+
+  useEffect(() => {
+    setTotalProduct(Object.keys(peripheralsData).length);
+  }, [peripheralsData]);
+
   return (
-    <div className="py-xl flex flex-col">
+    <div className="py-xl flex flex-col gap-y-xl">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-x-sm">
           <span className="rounded-xs p-sm bg-bg-secondary">
             <MdOutlineShoppingBag color="#666666" />
           </span>
-          <p className="text-sm font-medium text-text-primary">32 Products</p>
+          <p className="text-sm font-medium text-text-primary">
+            {totalProduct} Products
+          </p>
         </div>
         <div className="flex flex-row items-center gap-x-md">
           <InputText placeholder="Search" />

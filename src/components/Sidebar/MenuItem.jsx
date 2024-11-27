@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 const MenuItem = ({ icon: Icon, label }) => {
   return (
-    <div className="flex flex-row items-center gap-x-lg px-sm py-xs hover:bg-button-secondary cursor-pointer rounded-xs ease-in-out duration-200 text-text-primary">
-      <Icon size={17} color="#666666" />
-      <span className="text-xs font-medium">{label}</span>
-    </div>
+    <Link to="/peripherals">
+      <div className="flex flex-row items-center gap-x-lg px-sm py-xs hover:bg-button-secondary cursor-pointer rounded-xs ease-in-out duration-200 text-text-primary">
+        <Icon size={17} color="#666666" />
+        <span className="text-xs font-medium">{label}</span>
+      </div>
+    </Link>
   );
 };
 
